@@ -25,19 +25,18 @@ Save these into the `assets/` folder. Until you do, the site shows clean gradien
 | `assets/vlog-1.jpg`, `vlog-2.jpg` | Vlog thumbnails (optional) |
 | `assets/reel-1.jpg`, `reel-2.jpg` | Reel thumbnails (optional) |
 | `assets/blog-1.jpg`, `blog-2.jpg` | Blog cover images (optional) |
+| `assets/hero-bg.mp4` | **Header background video** (muted, loops). Keep it short & compressed — aim under ~8 MB. |
+| `assets/hero-poster.jpg` | Still frame shown while the header video loads |
+| `assets/intro-video.mp4` | **Featured "Watch" video** in the Watch section |
+| `assets/intro-poster.jpg` | Thumbnail shown before the Watch video plays |
+
+### Videos
+- **Header background video:** drop `assets/hero-bg.mp4` in and it autoplays behind the hero (muted + looping). A light overlay keeps your text readable — if you want the video more visible, lower the opacity of `.hero-video-tint` in `assets/site.css`.
+- **Featured video ("Watch" section):** by default it plays your own `assets/intro-video.mp4`. Prefer YouTube? In `index.html`, delete the `<video>` tag in the Watch section and uncomment the `<iframe>` right below it, swapping `YOUR_VIDEO_ID`.
+- Both show a clean placeholder until you add the files, so the live site never looks broken.
+
+### Pricing
+The homepage pricing now **defaults to yearly** (your best-value option). Visitors can still flip to monthly with the toggle.
 
 ## 2) One thing left to wire up
-- **HighLevel booking link** — in `index.html`, find `YOUR-HIGHLEVEL-BOOKING-LINK` and paste your HighLevel calendar booking URL. That powers the "Book a Call" button.
-  - *Tip:* to embed the calendar directly on the page instead of linking out, replace the whole `<div class="text-cta" ...>Book a Call...</div>` block with your HighLevel iframe embed code.
-
-Already done for you: your **phone number (787-549-3076)** powers every "Text Me Now" button, and your **Skool link** is wired throughout. There is **no email contact form** — just Text and Book a Call, as requested.
-
-## 3) Update your live numbers
-In `index.html`, the "EDIT YOUR LIVE NUMBERS HERE" block controls the animated stats. Change the `data-count` / `data-suffix` values and the reach-ticker text.
-
-## 4) Publish
-- **Fastest:** drag the whole folder into **Netlify Drop** (app.netlify.com/drop) — deploys in seconds.
-- **GitHub Pages / Vercel:** connect the repo (see GITHUB-PUSH.md) and enable Pages or import to Vercel.
-Then point ColbyFifer.com at it.
-
-> Note: Your Day 1 banner art says **$19/mo founding**, but you told me **$17/mo** — the site currently uses $17. Tell me which is correct and I'll make it consistent.
+- **HighLevel booking link** — in `index.html`, find `YOUR-HIGHLEVEL-BOOKING-LINK` and paste your High
