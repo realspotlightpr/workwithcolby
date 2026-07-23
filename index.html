@@ -303,6 +303,7 @@ header.nav.scrolled .nav-bar{background:rgba(255,250,242,.95);box-shadow:0 8px 3
 .brands{background:var(--cream)}
 .brand-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .brand{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-sm);transition:transform .22s,box-shadow .22s;position:relative;overflow:hidden}
+.brand-grid a.brand{display:block;color:inherit;text-decoration:none}
 .brand:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
 .brand .logo-box{width:88px;height:88px;border-radius:20px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;overflow:hidden;background:var(--cream)}
 .brand .logo-box img{width:100%;height:100%;object-fit:contain}
@@ -757,12 +758,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
       <p>Real companies, real numbers, built where everyone can watch.</p>
     </div>
     <div class="brand-grid">
-      <div class="brand live" data-reveal>
-        <div class="logo-box"><img src="assets/spotlight-pr.png" alt="Spotlight Puerto Rico" onerror="this.parentNode.style.fontSize='2rem';this.parentNode.innerHTML='🏝️'" /></div>
+      <a class="brand live" data-reveal href="https://spotlightpuertorico.com/" target="_blank" rel="noopener" aria-label="Visit Spotlight Puerto Rico">
+        <div class="logo-box"><img src="assets/spotlight-pr.png" alt="Spotlight Puerto Rico logo" /></div>
         <h3>Spotlight Puerto Rico</h3>
         <p>Putting Puerto Rican businesses on the map — discovery, exposure, and growth for the island's entrepreneurs.</p>
         <div class="metric">100+ businesses hosted &amp; growing</div>
-      </div>
+      </a>
       <div class="brand live" data-reveal data-delay="1">
         <div class="logo-box"><img src="assets/booked-bison.png" alt="Booked Bison" onerror="this.parentNode.style.fontSize='2rem';this.parentNode.innerHTML='🦬'" /></div>
         <h3>Booked Bison</h3>
