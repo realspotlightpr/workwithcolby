@@ -74,7 +74,7 @@ header.nav{position:sticky;top:0;z-index:200}
 header.nav.scrolled .nav-bar{background:rgba(255,250,242,.95);box-shadow:0 8px 30px -18px rgba(15,38,48,.4)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h)}
 .logo{display:flex;align-items:center;gap:11px;font-family:'Fraunces';font-weight:900;font-size:1.32rem;letter-spacing:-.02em}
-.logo .dot{width:32px;height:32px;border-radius:50%;background:var(--grad-sun);box-shadow:0 0 0 4px rgba(255,176,32,.18);animation:spin-slow 14s linear infinite}
+.logo .dot{width:34px;height:34px;border-radius:50%;background:url('/assets/colby-profile.png') center 22%/cover no-repeat;box-shadow:0 0 0 3px rgba(255,176,32,.25)}
 .nav-links{display:flex;gap:6px;align-items:center;font-weight:600;font-size:.95rem}
 .nav-links > a,.nav-item > button{background:none;border:none;font:inherit;color:var(--ink-soft);cursor:pointer;padding:9px 14px;border-radius:12px;transition:color .15s,background .15s;display:inline-flex;align-items:center;gap:5px}
 .nav-links > a:hover,.nav-item > button:hover{color:var(--ink);background:rgba(15,38,48,.05)}
@@ -205,7 +205,6 @@ header.nav.scrolled .nav-bar{background:rgba(255,250,242,.95);box-shadow:0 8px 3
 .hero.dark p.lead{color:rgba(255,255,255,.9)}
 .hero.dark .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4)}
 .hero.dark .avatars span{border-color:rgba(255,255,255,.65)}
-@media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 
 /* FEATURED VIDEO SECTION */
 .video-sec{background:linear-gradient(180deg,var(--cream),#fff)}
@@ -454,7 +453,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
     <!-- LAYER 1 — background image (base). Add assets/hero-bg.jpg. Gradient shows if it's missing. -->
     <div class="hero-image"><img src="assets/hero-poster.jpg" alt="" /></div>
     <!-- LAYER 2 — background video, plays over the image. Add assets/hero-bg.mp4 (muted+loop so it autoplays everywhere). -->
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" aria-hidden="true">
       <source src="assets/hero-bg.mp4" type="video/mp4" />
     </video>
     <!-- LAYER 3 — overlay for legibility (add class "dark" to <section class="hero"> for a cinematic dark overlay). -->
@@ -464,7 +463,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
   <div class="wrap">
     <div class="hero-grid">
       <div data-reveal="left">
-        <span class="eyebrow">AI · IT · Development — building in public from Puerto Rico 🌴</span>
+        <span class="eyebrow">AI · IT · Development — one expert. Unlimited output.</span>
         <h1>Hire an <span class="grad">AI, IT &amp; Dev expert</span> for less than a full-time hire.</h1>
         <p class="lead">I'm Colby Fifer — a vibe coder and builder who ships real results with the world's best AI tools. One flat monthly rate, unlimited tasks, and enterprise software included at no cost to you.</p>
         <div class="hero-ctas">
@@ -583,9 +582,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
   <div class="wrap">
     <div class="about-grid">
       <div class="about-photo" data-reveal="left">
-        <!-- ADD IMAGE: assets/colby-2.jpg (the sunset cliff photo) -->
-        <img src="assets/colby-2.jpg" alt="Tropical shoreline in Puerto Rico" onerror="this.style.display='none'" />
-        <div class="ph">📸 Add assets/colby-2.jpg</div>
+        <img src="assets/colby-profile.png" alt="Portrait of Colby Fifer" />
       </div>
       <div class="about-copy" data-reveal="right">
         <span class="eyebrow">Who I am</span>
@@ -734,7 +731,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
       </div>
       <div class="day1-card" data-reveal="right">
         <span class="eyebrow light">Founding membership</span>
-        <div class="day1-price"><span class="n">$17</span><span class="p">/month</span></div>
+        <div class="day1-price"><span class="n">$9</span><span class="p">/month</span></div>
         <ul class="day1-list">
           <li><span class="ck">✓</span> AI · Content · Websites · Affiliate — through daily action</li>
           <li><span class="ck">✓</span> For owners, freelancers &amp; beginners</li>
@@ -772,7 +769,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
       <div class="brand live" data-reveal data-delay="2">
         <div class="logo-box"><img src="assets/day1.png" alt="Day 1 Community" onerror="this.parentNode.style.fontSize='2rem';this.parentNode.innerHTML='🚀'" /></div>
         <h3>Day 1 Community</h3>
-        <p>My Skool community teaching real-world AI to owners, freelancers &amp; beginners for $17/mo.</p>
+        <p>My Skool community teaching real-world AI to owners, freelancers &amp; beginners for $9/month.</p>
         <div class="metric">15 founding members and climbing</div>
         <a href="https://www.skool.com/day-1-or-1-day-start-today-5658/about" target="_blank" rel="noopener" class="go">Join the community →</a>
       </div>
@@ -871,6 +868,23 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
     nav.querySelectorAll('.mobile-menu a').forEach(function (a) {
       a.addEventListener('click', function () { nav.classList.remove('open'); });
     });
+  }
+
+  /* keep the muted hero background moving when browsers delay autoplay */
+  var heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    var playHero = function () {
+      var attempt = heroVideo.play();
+      if (attempt && typeof attempt.catch === 'function') attempt.catch(function () {});
+    };
+    playHero();
+    heroVideo.addEventListener('loadeddata', playHero, { once: true });
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) playHero();
+    });
+    document.addEventListener('pointerdown', playHero, { once: true });
   }
 
   /* scroll reveal */

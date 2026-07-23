@@ -60,7 +60,7 @@ header.nav{position:sticky;top:0;z-index:200}
 header.nav.scrolled .nav-bar{background:rgba(255,250,242,.95);box-shadow:0 8px 30px -18px rgba(15,38,48,.4)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h)}
 .logo{display:flex;align-items:center;gap:11px;font-family:'Fraunces';font-weight:900;font-size:1.32rem;letter-spacing:-.02em}
-.logo .dot{width:32px;height:32px;border-radius:50%;background:var(--grad-sun);box-shadow:0 0 0 4px rgba(255,176,32,.18);animation:spin-slow 14s linear infinite}
+.logo .dot{width:34px;height:34px;border-radius:50%;background:url('/assets/colby-profile.png') center 22%/cover no-repeat;box-shadow:0 0 0 3px rgba(255,176,32,.25)}
 .nav-links{display:flex;gap:6px;align-items:center;font-weight:600;font-size:.95rem}
 .nav-links > a,.nav-item > button{background:none;border:none;font:inherit;color:var(--ink-soft);cursor:pointer;padding:9px 14px;border-radius:12px;transition:color .15s,background .15s;display:inline-flex;align-items:center;gap:5px}
 .nav-links > a:hover,.nav-item > button:hover{color:var(--ink);background:rgba(15,38,48,.05)}
@@ -191,7 +191,6 @@ header.nav.scrolled .nav-bar{background:rgba(255,250,242,.95);box-shadow:0 8px 3
 .hero.dark p.lead{color:rgba(255,255,255,.9)}
 .hero.dark .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4)}
 .hero.dark .avatars span{border-color:rgba(255,255,255,.65)}
-@media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 
 /* FEATURED VIDEO SECTION */
 .video-sec{background:linear-gradient(180deg,var(--cream),#fff)}
