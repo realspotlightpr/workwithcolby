@@ -106,14 +106,14 @@ header.nav.scrolled .nav-bar{background:rgba(255,250,242,.95);box-shadow:0 8px 3
 @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(34,197,94,.45)}70%{box-shadow:0 0 0 12px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 
 /* HERO */
-.hero{padding:66px 0 92px;overflow:hidden}
+.hero{padding:96px 0 112px;overflow:hidden;min-height:calc(100vh - var(--nav-h));display:flex;align-items:center}
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .blob{position:absolute;filter:blur(14px);opacity:.5;animation:blob 16s ease-in-out infinite}
 .blob.b1{width:440px;height:440px;background:radial-gradient(circle,var(--mango),transparent 68%);top:-120px;right:-80px}
 .blob.b2{width:420px;height:420px;background:radial-gradient(circle,var(--ocean),transparent 68%);bottom:-140px;left:-100px;animation-delay:-6s}
 .blob.b3{width:300px;height:300px;background:radial-gradient(circle,var(--violet),transparent 70%);top:40%;left:44%;opacity:.28;animation-delay:-3s}
 .hero .wrap{position:relative;z-index:2}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,760px);gap:52px;align-items:center}
 .hero h1{font-size:clamp(2.7rem,6vw,4.7rem);font-weight:900;margin:16px 0 20px}
 .hero h1 .grad{background:var(--grad-hero);background-size:220% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradient-move 7s ease infinite}
 .hero p.lead{font-size:1.24rem;color:var(--ink-soft);max-width:560px;margin-bottom:28px}
@@ -190,6 +190,8 @@ header.nav.scrolled .nav-bar{background:rgba(255,250,242,.95);box-shadow:0 8px 3
 .hero.dark h1,.hero.dark .eyebrow,.hero.dark p.lead,.hero.dark .t-txt{color:#fff}
 .hero.dark p.lead{color:rgba(255,255,255,.9)}
 .hero.dark .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4)}
+.hero.dark .avatars span{border-color:rgba(255,255,255,.65)}
+@media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 
 /* FEATURED VIDEO SECTION */
 .video-sec{background:linear-gradient(180deg,var(--cream),#fff)}

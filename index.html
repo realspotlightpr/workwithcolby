@@ -120,14 +120,14 @@ header.nav.scrolled .nav-bar{background:rgba(255,250,242,.95);box-shadow:0 8px 3
 @keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(34,197,94,.45)}70%{box-shadow:0 0 0 12px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
 
 /* HERO */
-.hero{padding:66px 0 92px;overflow:hidden}
+.hero{padding:96px 0 112px;overflow:hidden;min-height:calc(100vh - var(--nav-h));display:flex;align-items:center}
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .blob{position:absolute;filter:blur(14px);opacity:.5;animation:blob 16s ease-in-out infinite}
 .blob.b1{width:440px;height:440px;background:radial-gradient(circle,var(--mango),transparent 68%);top:-120px;right:-80px}
 .blob.b2{width:420px;height:420px;background:radial-gradient(circle,var(--ocean),transparent 68%);bottom:-140px;left:-100px;animation-delay:-6s}
 .blob.b3{width:300px;height:300px;background:radial-gradient(circle,var(--violet),transparent 70%);top:40%;left:44%;opacity:.28;animation-delay:-3s}
 .hero .wrap{position:relative;z-index:2}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,760px);gap:52px;align-items:center}
 .hero h1{font-size:clamp(2.7rem,6vw,4.7rem);font-weight:900;margin:16px 0 20px}
 .hero h1 .grad{background:var(--grad-hero);background-size:220% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradient-move 7s ease infinite}
 .hero p.lead{font-size:1.24rem;color:var(--ink-soft);max-width:560px;margin-bottom:28px}
@@ -204,6 +204,8 @@ header.nav.scrolled .nav-bar{background:rgba(255,250,242,.95);box-shadow:0 8px 3
 .hero.dark h1,.hero.dark .eyebrow,.hero.dark p.lead,.hero.dark .t-txt{color:#fff}
 .hero.dark p.lead{color:rgba(255,255,255,.9)}
 .hero.dark .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4)}
+.hero.dark .avatars span{border-color:rgba(255,255,255,.65)}
+@media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 
 /* FEATURED VIDEO SECTION */
 .video-sec{background:linear-gradient(180deg,var(--cream),#fff)}
@@ -447,12 +449,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
 </header>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
+<section class="hero dark">
   <div class="hero-bg">
     <!-- LAYER 1 — background image (base). Add assets/hero-bg.jpg. Gradient shows if it's missing. -->
-    <div class="hero-image"><img src="assets/hero-bg.jpg" alt="" onerror="this.style.display='none'" /></div>
+    <div class="hero-image"><img src="assets/hero-poster.jpg" alt="" /></div>
     <!-- LAYER 2 — background video, plays over the image. Add assets/hero-bg.mp4 (muted+loop so it autoplays everywhere). -->
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-bg.jpg" onerror="this.style.display='none'">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true">
       <source src="assets/hero-bg.mp4" type="video/mp4" />
     </video>
     <!-- LAYER 3 — overlay for legibility (add class "dark" to <section class="hero"> for a cinematic dark overlay). -->
@@ -475,15 +477,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
         </div>
       </div>
 
-      <div class="hero-photo" data-reveal="right">
-        <div class="frame">
-          <!-- ADD IMAGE: assets/colby-1.jpg (the beach + dog photo) -->
-          <img src="assets/colby-1.jpg" alt="Colby Fifer in Puerto Rico" onerror="this.style.display='none'" />
-          <div class="ph"><b>📸 Add assets/colby-1.jpg</b><span style="opacity:.85;font-size:.85rem;margin-top:6px">Your beach photo drops in here</span></div>
-        </div>
-        <div class="float-card fc-1"><span class="ic" style="background:var(--grad-warm)">📈</span><div><b>1M+</b><span>reach this month</span></div></div>
-        <div class="float-card fc-2"><span class="ic" style="background:var(--grad-cool)">🏝️</span><div><b>100+</b><span>PR businesses hosted</span></div></div>
-      </div>
     </div>
   </div>
 </section>
@@ -568,19 +561,18 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
   <div class="wrap">
     <div class="sec-head center" data-reveal>
       <span class="eyebrow">Watch</span>
-      <h2>See how I work — in 60 seconds.</h2>
-      <p>The fastest way to know if we're a fit. Hit play.</p>
+      <h2>Meet Colby’s AI twin.</h2>
+      <p>See what I do, how I can help—and why this video proves what’s possible. Hit play.</p>
     </div>
     <div class="video-frame" data-reveal="scale">
       <div class="video-inner">
-        <!-- OPTION A (default): your own video file. Add assets/intro-video.mp4 + assets/intro-poster.jpg -->
-        <video controls playsinline preload="none" poster="assets/intro-poster.jpg" onerror="this.style.display='none'">
+        <video controls playsinline preload="metadata" aria-label="Colby’s AI twin explains how Colby helps businesses with AI, IT, development, and websites">
           <source src="assets/intro-video.mp4" type="video/mp4" />
         </video>
         <!-- OPTION B: prefer YouTube? Delete the <video> above and uncomment this, swapping YOUR_VIDEO_ID:
         <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Meet Colby" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         -->
-        <div class="v-ph"><div class="pbtn">▶</div><b>Add your intro video</b><span>assets/intro-video.mp4 (or embed a YouTube link — see SETUP.md)</span></div>
+        <div class="v-ph"><div class="pbtn">▶</div><b>Meet Colby’s AI twin</b><span>Press play to see what we can build for your business.</span></div>
       </div>
     </div>
   </div>
@@ -592,7 +584,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
     <div class="about-grid">
       <div class="about-photo" data-reveal="left">
         <!-- ADD IMAGE: assets/colby-2.jpg (the sunset cliff photo) -->
-        <img src="assets/colby-2.jpg" alt="Colby Fifer watching the sunset in Puerto Rico" onerror="this.style.display='none'" />
+        <img src="assets/colby-2.jpg" alt="Tropical shoreline in Puerto Rico" onerror="this.style.display='none'" />
         <div class="ph">📸 Add assets/colby-2.jpg</div>
       </div>
       <div class="about-copy" data-reveal="right">
@@ -766,19 +758,19 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
     </div>
     <div class="brand-grid">
       <div class="brand live" data-reveal>
-        <div class="logo-box"><img src="assets/spotlight-pr.png" alt="Spotlight Puerto Rico" onerror="this.parentNode.innerHTML='🏝️';this.parentNode.style.fontSize='2rem'" /></div>
+        <div class="logo-box"><img src="assets/spotlight-pr.png" alt="Spotlight Puerto Rico" onerror="this.parentNode.style.fontSize='2rem';this.parentNode.innerHTML='🏝️'" /></div>
         <h3>Spotlight Puerto Rico</h3>
         <p>Putting Puerto Rican businesses on the map — discovery, exposure, and growth for the island's entrepreneurs.</p>
         <div class="metric">100+ businesses hosted &amp; growing</div>
       </div>
       <div class="brand live" data-reveal data-delay="1">
-        <div class="logo-box"><img src="assets/booked-bison.png" alt="Booked Bison" onerror="this.parentNode.innerHTML='🦬';this.parentNode.style.fontSize='2rem'" /></div>
+        <div class="logo-box"><img src="assets/booked-bison.png" alt="Booked Bison" onerror="this.parentNode.style.fontSize='2rem';this.parentNode.innerHTML='🦬'" /></div>
         <h3>Booked Bison</h3>
         <p>My latest public project, in active build. Follow along as it comes to life from day one.</p>
         <div class="metric">Building in public now</div>
       </div>
       <div class="brand live" data-reveal data-delay="2">
-        <div class="logo-box"><img src="assets/day1.png" alt="Day 1 Community" onerror="this.parentNode.innerHTML='🚀';this.parentNode.style.fontSize='2rem'" /></div>
+        <div class="logo-box"><img src="assets/day1.png" alt="Day 1 Community" onerror="this.parentNode.style.fontSize='2rem';this.parentNode.innerHTML='🚀'" /></div>
         <h3>Day 1 Community</h3>
         <p>My Skool community teaching real-world AI to owners, freelancers &amp; beginners for $17/mo.</p>
         <div class="metric">15 founding members and climbing</div>
