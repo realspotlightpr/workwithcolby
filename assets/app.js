@@ -22,6 +22,23 @@
     });
   }
 
+  /* keep the muted hero background moving when browsers delay autoplay */
+  var heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    var playHero = function () {
+      var attempt = heroVideo.play();
+      if (attempt && typeof attempt.catch === 'function') attempt.catch(function () {});
+    };
+    playHero();
+    heroVideo.addEventListener('loadeddata', playHero, { once: true });
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) playHero();
+    });
+    document.addEventListener('pointerdown', playHero, { once: true });
+  }
+
   /* scroll reveal */
   var revealEls = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window) {
