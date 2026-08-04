@@ -1,0 +1,1049 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Custom SEO Dashboard & AI SEO Agent | Work with Colby</title>
+    <meta
+      name="description"
+      content="Custom SEO dashboard, AI-assisted monitoring, technical SEO fixes, local citations and approved outreach—now $749/month for a limited time, normally $1,497."
+    />
+    <link rel="canonical" href="https://workwithcolby.com/seo-services.html" />
+    <meta property="og:title" content="SEO Command Center | Work with Colby" />
+    <meta
+      property="og:description"
+      content="A custom SEO dashboard and AI SEO agent backed by hands-on technical execution."
+    />
+    <meta
+      property="og:image"
+      content="https://workwithcolby.com/assets/real-client-dashboard.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/scroll-progress.css" />
+    <style>
+      :root {
+        --ink: #0d2730;
+        --navy: #081f37;
+        --cream: #fffaf2;
+        --muted: #55707c;
+        --line: #dce7e8;
+        --teal: #00b7bd;
+        --blue: #398fea;
+        --violet: #745bff;
+        --coral: #ff6374;
+        --mango: #ffad2f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #fff;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        line-height: 1.65;
+      }
+      .wrap {
+        width: min(1160px, calc(100% - 40px));
+        margin: auto;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        line-height: 1.04;
+        margin-top: 0;
+      }
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 250, 242, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-row {
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--ink);
+        font-family: "Fraunces", serif;
+        font-size: 1.3rem;
+        font-weight: 900;
+        text-decoration: none;
+      }
+      .logo i {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: url("assets/colby-profile.png") center 22% / cover;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .nav a {
+        text-decoration: none;
+        color: var(--ink);
+        font-weight: 800;
+        font-size: 0.88rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 22px;
+        border-radius: 999px;
+        text-decoration: none !important;
+        font-weight: 900;
+        background: linear-gradient(110deg, var(--mango), var(--coral));
+        color: #071e29 !important;
+        box-shadow: 0 15px 35px rgba(255, 99, 116, 0.2);
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 85px 0;
+        background:
+          radial-gradient(
+            circle at 85% 10%,
+            rgba(90, 87, 255, 0.42),
+            transparent 37%
+          ),
+          linear-gradient(135deg, #071b32, #0b2c4c);
+        color: #fff;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 54px;
+        align-items: start;
+      }
+      .eyebrow {
+        display: inline-block;
+        color: #70f2df;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+      .hero h1 {
+        font-size: clamp(3.2rem, 6.5vw, 6.3rem);
+        margin: 16px 0 22px;
+      }
+      .hero-copy > p {
+        font-size: 1.08rem;
+        color: rgba(255, 255, 255, 0.76);
+        max-width: 650px;
+      }
+      .price-row {
+        display: flex;
+        gap: 12px;
+        align-items: stretch;
+        flex-wrap: wrap;
+        margin: 26px 0;
+      }
+      .price {
+        padding: 15px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .price b {
+        display: block;
+        font-family: "Fraunces", serif;
+        font-size: 1.85rem;
+      }
+      .price span {
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.67);
+      }
+      .price.featured {
+        border-color: rgba(111, 243, 221, 0.55);
+        box-shadow: 0 0 34px rgba(35, 216, 190, 0.18);
+      }
+      .trust {
+        font-size: 0.7rem !important;
+      }
+      .form {
+        background: #fff;
+        border-radius: 25px;
+        padding: 14px;
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
+        min-height: 1110px;
+      }
+      .form-head {
+        padding: 12px 13px 18px;
+        color: var(--ink);
+      }
+      .form-head h2 {
+        margin: 4px 0 6px;
+        font-size: 1.8rem;
+      }
+      .form-head p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+      .form iframe {
+        display: block;
+        width: 100%;
+        height: 1000px;
+        border: 0;
+        border-radius: 14px;
+      }
+      .section {
+        padding: 92px 0;
+      }
+      .center {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 48px;
+      }
+      .center h2 {
+        font-size: clamp(2.5rem, 5vw, 4.6rem);
+        margin: 12px 0;
+      }
+      .center p {
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .card {
+        padding: 27px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: #fff;
+        box-shadow: 0 15px 40px rgba(13, 39, 48, 0.08);
+      }
+      .card b {
+        display: grid;
+        place-items: center;
+        width: 43px;
+        height: 43px;
+        border-radius: 13px;
+        background: linear-gradient(135deg, #dffbf7, #e7e3ff);
+        margin-bottom: 20px;
+      }
+      .card h3 {
+        font-size: 1.35rem;
+        margin-bottom: 9px;
+      }
+      .card p {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+      .dashboard {
+        background: #f4f8fc;
+      }
+      .pricing-section {
+        background: linear-gradient(180deg, #fffaf2, #f4f8fc);
+      }
+      .pricing-table {
+        max-width: 940px;
+        margin: auto;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: #fff;
+        box-shadow: 0 28px 75px rgba(13, 39, 48, 0.13);
+      }
+      .pricing-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 30px;
+        align-items: center;
+        padding: 34px;
+        background: var(--navy);
+        color: #fff;
+      }
+      .pricing-head h3 {
+        margin: 8px 0 7px;
+        font-size: clamp(2rem, 4vw, 3.3rem);
+      }
+      .pricing-head p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.68);
+      }
+      .pricing-amount {
+        min-width: 220px;
+        padding: 20px;
+        border: 1px solid rgba(112, 242, 223, 0.45);
+        border-radius: 19px;
+        background: rgba(255, 255, 255, 0.08);
+        text-align: center;
+      }
+      .pricing-amount strong {
+        display: block;
+        font-family: "Fraunces", serif;
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+      .pricing-amount span {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .pricing-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .pricing-column {
+        padding: 32px;
+      }
+      .pricing-column + .pricing-column {
+        border-left: 1px solid var(--line);
+      }
+      .pricing-column h4 {
+        margin: 0 0 6px;
+        font-size: 1rem;
+      }
+      .pricing-column .subprice {
+        display: block;
+        margin-bottom: 18px;
+        color: var(--teal);
+        font-family: "Fraunces", serif;
+        font-size: 1.65rem;
+        font-weight: 900;
+      }
+      .pricing-column ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 11px;
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+      .pricing-column li:before {
+        content: "✓";
+        margin-right: 9px;
+        color: var(--teal);
+        font-weight: 900;
+      }
+      .pricing-action {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 24px 32px;
+        border-top: 1px solid var(--line);
+        background: #f7fbfc;
+      }
+      .pricing-action p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.78rem;
+      }
+      .seo-sale-ribbon {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 10px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: linear-gradient(110deg, var(--mango), var(--coral));
+        color: #071d28;
+        font-size: 0.67rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        box-shadow: 0 12px 30px rgba(255, 99, 116, 0.22);
+      }
+      .pricing-amount.sale {
+        border-color: rgba(255, 177, 43, 0.7);
+        background: linear-gradient(
+          145deg,
+          rgba(255, 177, 43, 0.17),
+          rgba(255, 99, 116, 0.12)
+        );
+        box-shadow: 0 0 38px rgba(255, 99, 116, 0.14);
+      }
+      .pricing-amount.sale s {
+        display: block;
+        margin-top: 6px;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.72rem;
+      }
+      .pricing-column .subprice.sale-price {
+        color: var(--coral);
+      }
+      .pricing-column .subprice.sale-price s {
+        margin-left: 7px;
+        color: var(--muted);
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+      }
+      .dash-shell {
+        display: grid;
+        grid-template-columns: 0.35fr 0.65fr;
+        gap: 24px;
+        padding: 28px;
+        border-radius: 28px;
+        background: #071d31;
+        color: #fff;
+        box-shadow: 0 35px 90px rgba(8, 31, 55, 0.24);
+      }
+      .dash-side {
+        padding: 22px;
+      }
+      .dash-side h2 {
+        font-size: 2.8rem;
+      }
+      .dash-side p {
+        color: rgba(255, 255, 255, 0.66);
+      }
+      .dash-main {
+        padding: 22px;
+        border-radius: 20px;
+        background: #fff;
+        color: var(--ink);
+      }
+      .score-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .score {
+        padding: 16px;
+        border-radius: 15px;
+        background: #f3f7fa;
+      }
+      .score strong {
+        display: block;
+        font-family: "Fraunces", serif;
+        font-size: 2rem;
+      }
+      .chart {
+        height: 190px;
+        margin-top: 16px;
+        border-radius: 16px;
+        background:
+          linear-gradient(180deg, rgba(42, 204, 187, 0.08), transparent),
+          repeating-linear-gradient(
+            0deg,
+            #eef3f5 0,
+            #eef3f5 1px,
+            transparent 1px,
+            transparent 38px
+          );
+        position: relative;
+        overflow: hidden;
+      }
+      .chart:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 26px;
+        height: 95px;
+        background: linear-gradient(
+          165deg,
+          transparent 0 20%,
+          #27cbb8 21% 23%,
+          transparent 24% 35%,
+          #5a79ff 36% 38%,
+          transparent 39% 49%,
+          #785dff 50% 52%,
+          transparent 53%
+        );
+        filter: drop-shadow(0 7px 9px rgba(55, 117, 236, 0.3));
+      }
+      .steps {
+        background: var(--navy);
+        color: #fff;
+      }
+      .step-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .step {
+        padding: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .step span {
+        font-family: "Fraunces", serif;
+        font-size: 2.4rem;
+        color: #68edda;
+      }
+      .step p {
+        color: rgba(255, 255, 255, 0.67);
+        font-size: 0.84rem;
+      }
+      .marquee {
+        overflow: hidden;
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 10%,
+          #000 90%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 10%,
+          #000 90%,
+          transparent
+        );
+      }
+      .track {
+        display: flex;
+        width: max-content;
+        gap: 14px;
+        animation: scroll 28s linear infinite;
+      }
+      .set {
+        display: flex;
+        gap: 14px;
+      }
+      .platform {
+        width: 165px;
+        height: 125px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        border: 1px solid var(--line);
+        border-radius: 19px;
+        background: #fff;
+        box-shadow: 0 12px 30px rgba(13, 39, 48, 0.08);
+      }
+      .platform img {
+        width: 43px;
+        height: 43px;
+        object-fit: contain;
+      }
+      .platform strong {
+        font-size: 0.78rem;
+        text-align: center;
+      }
+      @keyframes scroll {
+        to {
+          transform: translateX(calc(-50% - 7px));
+        }
+      }
+      .fine {
+        font-size: 0.72rem;
+        color: var(--muted);
+        text-align: center;
+        margin-top: 18px;
+      }
+      .cta {
+        padding: 85px 0;
+        background: var(--cream);
+        text-align: center;
+      }
+      .cta h2 {
+        font-size: clamp(2.6rem, 5vw, 4.5rem);
+        max-width: 850px;
+        margin: 0 auto 18px;
+      }
+      .cta p {
+        color: var(--muted);
+        max-width: 720px;
+        margin: 0 auto 25px;
+      }
+      footer {
+        padding: 34px 0;
+        background: #061925;
+        color: rgba(255, 255, 255, 0.68);
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .foot a {
+        color: #fff;
+      }
+      @media (max-width: 900px) {
+        .hero-grid,
+        .dash-shell {
+          grid-template-columns: 1fr;
+        }
+        .form {
+          min-height: 1070px;
+        }
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .step-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .nav-links a:not(.btn) {
+          display: none;
+        }
+      }
+      @media (max-width: 600px) {
+        .wrap {
+          width: min(100% - 28px, 1160px);
+        }
+        .hero {
+          padding: 55px 0;
+        }
+        .hero h1 {
+          font-size: 3.2rem;
+        }
+        .grid,
+        .score-row,
+        .step-grid {
+          grid-template-columns: 1fr;
+        }
+        .section {
+          padding: 68px 0;
+        }
+        .dash-shell {
+          padding: 12px;
+        }
+        .dash-side,
+        .dash-main {
+          padding: 18px;
+        }
+        .price {
+          width: 100%;
+        }
+        .pricing-head,
+        .pricing-body {
+          grid-template-columns: 1fr;
+        }
+        .pricing-amount {
+          min-width: 0;
+        }
+        .pricing-column + .pricing-column {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+        .pricing-action {
+          align-items: stretch;
+          flex-direction: column;
+        }
+        .form {
+          padding: 8px;
+          margin-inline: -3px;
+        }
+        .platform {
+          width: 140px;
+          height: 110px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .track {
+          animation: none;
+        }
+        .marquee {
+          overflow-x: auto;
+          mask-image: none;
+          -webkit-mask-image: none;
+        }
+        .set[aria-hidden="true"] {
+          display: none;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "SEO Command Center",
+        "provider": {
+          "@type": "Person",
+          "name": "Colby Fifer",
+          "url": "https://workwithcolby.com/"
+        },
+        "areaServed": "US",
+        "description": "Custom SEO dashboard, technical SEO implementation, local citation work and AI-assisted opportunity monitoring."
+      }
+    </script>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap nav-row">
+        <a class="logo" href="index.html"><i></i>Work with Colby</a>
+        <nav class="nav-links">
+          <a href="#included">What You Get</a><a href="#pricing">Pricing</a
+          ><a href="#process">How It Works</a
+          ><a href="#platforms">Visibility Platforms</a
+          ><a class="btn" href="#start">Start SEO Audit</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Your SEO command center</span>
+            <h1>Know what ranks. Fix what doesn’t. Keep growing.</h1>
+            <p>
+              A custom SEO dashboard and AI SEO agent monitor your visibility,
+              surface the next opportunity and organize the work—while Colby
+              handles the technical fixes, legitimate citations and approved
+              outreach.
+            </p>
+            <a class="btn" href="#pricing"
+              >See Pricing &amp; What’s Included →</a
+            >
+            <p class="trust">
+              Pricing is scoped for one primary website and market. No paid
+              links, fake listings or guaranteed rankings.
+            </p>
+          </div>
+          <div class="form" id="start">
+            <div class="form-head">
+              <span class="eyebrow">Get the baseline</span>
+              <h2>Tell me where you want to grow.</h2>
+              <p>
+                I’ll review the site, market and current visibility before
+                recommending the right engagement.
+              </p>
+            </div>
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/UIzyU9Iptnf4qtJmosXU"
+              title="Work with Colby SEO interest form"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="included">
+        <div class="wrap">
+          <div class="center">
+            <span class="eyebrow">Everything connected</span>
+            <h2>More than another monthly PDF.</h2>
+            <p>
+              You get the measurement layer, the prioritized strategy and the
+              hands-on implementation needed to move the numbers.
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card">
+              <b>01</b>
+              <h3>Complete onboarding audit</h3>
+              <p>
+                Technical health, indexation, content, local visibility,
+                backlinks, competitors and conversion paths—then a prioritized
+                repair plan.
+              </p>
+            </article>
+            <article class="card">
+              <b>02</b>
+              <h3>Technical fixes</h3>
+              <p>
+                Metadata, canonicals, structured data, sitemap, crawl issues,
+                internal links, image optimization and other approved site
+                changes.
+              </p>
+            </article>
+            <article class="card">
+              <b>03</b>
+              <h3>Custom live dashboard</h3>
+              <p>
+                Search performance, technical scoring, citations, backlinks,
+                content coverage and active opportunities in one clear view.
+              </p>
+            </article>
+            <article class="card">
+              <b>04</b>
+              <h3>AI SEO agent</h3>
+              <p>
+                Continuously reviews available data, flags changes, tracks the
+                backlog and recommends the next highest-value action.
+              </p>
+            </article>
+            <article class="card">
+              <b>05</b>
+              <h3>Legitimate authority building</h3>
+              <p>
+                Free profile and citation opportunities first, followed by
+                relevant partner, resource and editorial outreach—never
+                automated spam.
+              </p>
+            </article>
+            <article class="card">
+              <b>06</b>
+              <h3>Search and AI visibility</h3>
+              <p>
+                Content planning for traditional search plus the clear entities,
+                answers and citations that help AI discovery systems understand
+                your business.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section pricing-section" id="pricing">
+        <div class="wrap">
+          <div class="center">
+            <span class="seo-sale-ribbon"
+              >Limited offer · 50% off monthly SEO</span
+            >
+            <span class="eyebrow">Simple, transparent pricing</span>
+            <h2>One setup. One monthly SEO command center.</h2>
+            <p>
+              Onboarding establishes the foundation. The monthly service keeps
+              measurement, fixes, content and authority work moving.
+            </p>
+          </div>
+          <div class="pricing-table">
+            <div class="pricing-head">
+              <div>
+                <span class="eyebrow">SEO Command Center</span>
+                <h3>Ongoing SEO execution</h3>
+                <p>For one primary website and target market.</p>
+              </div>
+              <div class="pricing-amount sale">
+                <strong>$749</strong><span>per month · limited sale price</span
+                ><s>Normally $1,497/month</s>
+              </div>
+            </div>
+            <div class="pricing-body">
+              <div class="pricing-column">
+                <h4>One-time onboarding</h4>
+                <span class="subprice">$1,497 once</span>
+                <ul>
+                  <li>Complete technical and visibility audit</li>
+                  <li>Search Console and sitemap setup</li>
+                  <li>Custom dashboard configuration</li>
+                  <li>Priority repair roadmap</li>
+                  <li>Initial high-impact SEO fixes</li>
+                </ul>
+              </div>
+              <div class="pricing-column">
+                <h4>Monthly service</h4>
+                <span class="subprice sale-price"
+                  >$749/month <s>$1,497</s></span
+                >
+                <ul>
+                  <li>AI SEO agent monitoring</li>
+                  <li>Technical and on-page improvements</li>
+                  <li>Content opportunity planning</li>
+                  <li>Legitimate citations and approved outreach</li>
+                  <li>Live scoring, reporting and action queue</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pricing-action">
+              <p>No paid links, fake listings or guaranteed rankings.</p>
+              <a class="btn" href="#start">Request Your SEO Audit →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section dashboard">
+        <div class="wrap">
+          <div class="dash-shell">
+            <div class="dash-side">
+              <span class="eyebrow">Built for your business</span>
+              <h2>Your full search picture, without the spreadsheet maze.</h2>
+              <p>
+                The dashboard turns scattered data into one operating queue:
+                what changed, what matters and what we are doing next.
+              </p>
+            </div>
+            <div class="dash-main">
+              <div class="score-row">
+                <div class="score">
+                  <small>SEO health</small><strong>92</strong
+                  ><span>+11 this month</span>
+                </div>
+                <div class="score">
+                  <small>Visibility</small><strong>68%</strong
+                  ><span>14 terms rising</span>
+                </div>
+                <div class="score">
+                  <small>Authority</small><strong>74</strong
+                  ><span>8 opportunities</span>
+                </div>
+              </div>
+              <div
+                class="chart"
+                aria-label="Example SEO visibility trend"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section steps" id="process">
+        <div class="wrap">
+          <div class="center">
+            <span class="eyebrow">The first 30 days</span>
+            <h2>Audit, repair, establish, then compound.</h2>
+          </div>
+          <div class="step-grid">
+            <article class="step">
+              <span>1</span>
+              <h3>Connect the data</h3>
+              <p>
+                Verify analytics, Search Console, business profiles and the
+                website’s technical baseline.
+              </p>
+            </article>
+            <article class="step">
+              <span>2</span>
+              <h3>Fix the foundation</h3>
+              <p>
+                Resolve the highest-impact crawl, metadata, structure, speed and
+                conversion issues.
+              </p>
+            </article>
+            <article class="step">
+              <span>3</span>
+              <h3>Establish authority</h3>
+              <p>
+                Create or clean up legitimate free citations and prepare
+                approved outreach targets.
+              </p>
+            </article>
+            <article class="step">
+              <span>4</span>
+              <h3>Run the growth queue</h3>
+              <p>
+                Track movement, create useful content and keep the next
+                measurable opportunity moving.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="platforms">
+        <div class="wrap">
+          <div class="center">
+            <span class="eyebrow">Visibility platforms</span>
+            <h2>Show up wherever customers verify you.</h2>
+            <p>
+              We build accurate, consistent visibility across eligible search,
+              map, directory and professional profiles.
+            </p>
+          </div>
+          <div class="marquee">
+            <div class="track">
+              <div class="set">
+                <div class="platform">
+                  <img
+                    src="https://cdn.simpleicons.org/google"
+                    alt="Google logo"
+                  /><strong>Google Business Profile</strong>
+                </div>
+                <div class="platform">
+                  <img
+                    src="https://cdn.simpleicons.org/nextdoor"
+                    alt="Nextdoor logo"
+                  /><strong>Nextdoor</strong>
+                </div>
+                <div class="platform">
+                  <img
+                    src="assets/bing-places-logo.svg"
+                    alt="Bing logo"
+                  /><strong>Bing Places</strong>
+                </div>
+                <div class="platform">
+                  <img
+                    src="https://cdn.simpleicons.org/apple"
+                    alt="Apple logo"
+                  /><strong>Apple Business Connect</strong>
+                </div>
+                <div class="platform">
+                  <img
+                    src="assets/linkedin-logo.svg"
+                    alt="LinkedIn logo"
+                  /><strong>LinkedIn</strong>
+                </div>
+                <div class="platform">
+                  <img
+                    src="https://cdn.simpleicons.org/github"
+                    alt="GitHub logo"
+                  /><strong>GitHub</strong>
+                </div>
+              </div>
+              <div class="set" aria-hidden="true">
+                <div class="platform">
+                  <img src="https://cdn.simpleicons.org/google" alt="" /><strong
+                    >Google Business Profile</strong
+                  >
+                </div>
+                <div class="platform">
+                  <img
+                    src="https://cdn.simpleicons.org/nextdoor"
+                    alt=""
+                  /><strong>Nextdoor</strong>
+                </div>
+                <div class="platform">
+                  <img src="assets/bing-places-logo.svg" alt="" /><strong
+                    >Bing Places</strong
+                  >
+                </div>
+                <div class="platform">
+                  <img src="https://cdn.simpleicons.org/apple" alt="" /><strong
+                    >Apple Business Connect</strong
+                  >
+                </div>
+                <div class="platform">
+                  <img src="assets/linkedin-logo.svg" alt="" /><strong
+                    >LinkedIn</strong
+                  >
+                </div>
+                <div class="platform">
+                  <img src="https://cdn.simpleicons.org/github" alt="" /><strong
+                    >GitHub</strong
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="fine">
+            Platform names and marks belong to their owners. Inclusion does not
+            imply endorsement or formal partnership. Listings depend on genuine
+            business eligibility and owner approval.
+          </p>
+        </div>
+      </section>
+      <section class="cta">
+        <div class="wrap">
+          <h2>Stop guessing what SEO work is happening.</h2>
+          <p>
+            See the score, the opportunity and the active work in one place—then
+            let the technical fixes and authority-building queue move every
+            month.
+          </p>
+          <a class="btn" href="#start">Start With a Complete Audit →</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap foot">
+        <span
+          >© <span id="year"></span> Work with Colby · workwithcolby.com</span
+        ><span
+          ><a href="blog.html">Articles</a> · <a href="terms.html">Terms</a> ·
+          <a href="privacy.html">Privacy</a></span
+        >
+      </div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/scroll-progress.js"></script>
+  </body>
+</html>

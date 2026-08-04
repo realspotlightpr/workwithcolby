@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Social Media Management | Work with Colby</title>
+    <meta
+      name="description"
+      content="Social media strategy, daily content, Reel scripts, carousels and AI-assisted production for small businesses starting at $350 per month."
+    />
+    <link rel="canonical" href="https://workwithcolby.com/social-media.html" />
+    <meta
+      property="og:title"
+      content="Social Media Management | Work with Colby"
+    />
+    <meta
+      property="og:description"
+      content="A practical content system that keeps your brand visible without making content your full-time job."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/scroll-progress.css" />
+    <style>
+      :root {
+        --ink: #0d2730;
+        --navy: #091f39;
+        --cream: #fffaf2;
+        --muted: #55707c;
+        --line: #dce7e8;
+        --teal: #00b7bd;
+        --blue: #398fea;
+        --violet: #745bff;
+        --coral: #ff6374;
+        --mango: #ffad2f;
+        --shadow: 0 24px 70px rgba(13, 39, 48, 0.14);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #fff;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        line-height: 1.65;
+        overflow-x: hidden;
+      }
+      .wrap {
+        width: min(1160px, calc(100% - 40px));
+        margin: auto;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        line-height: 1.04;
+        margin-top: 0;
+      }
+      h1 {
+        font-size: clamp(3.1rem, 6.8vw, 6rem);
+        margin: 12px 0 22px;
+      }
+      h2 {
+        font-size: clamp(2.25rem, 4.7vw, 4.2rem);
+      }
+      h3 {
+        font-size: 1.45rem;
+      }
+      .eyebrow {
+        color: #6ff3e8;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 23px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 900;
+        background: linear-gradient(
+          110deg,
+          var(--mango),
+          #ff856b,
+          var(--coral)
+        );
+        color: #081d28;
+        box-shadow: 0 14px 32px rgba(255, 99, 116, 0.24);
+      }
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(255, 250, 242, 0.95);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(14px);
+      }
+      .nav-row {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--ink);
+        font-family: "Fraunces", serif;
+        font-weight: 900;
+        text-decoration: none;
+        font-size: 1.15rem;
+      }
+      .logo i {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: url("assets/colby-profile.png") center 22% / cover;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 3px rgba(0, 183, 189, 0.18);
+      }
+      .nav nav {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+      .nav nav a {
+        color: var(--ink);
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .hero {
+        position: relative;
+        padding: 82px 0 88px;
+        color: #fff;
+        background:
+          radial-gradient(
+            circle at 84% 8%,
+            rgba(255, 99, 116, 0.52),
+            transparent 34%
+          ),
+          linear-gradient(125deg, #0a203a, #3c276c 58%, #a93667);
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        right: -130px;
+        bottom: -220px;
+        width: 520px;
+        height: 520px;
+        border-radius: 50%;
+        background: rgba(0, 183, 189, 0.18);
+        filter: blur(30px);
+      }
+      .hero-grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 52px;
+        align-items: start;
+      }
+      .hero-copy p {
+        max-width: 650px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 1.06rem;
+      }
+      .price-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 27px 0;
+      }
+      .price-pill {
+        padding: 15px 18px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+      .price-pill small {
+        display: block;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .price-pill strong {
+        font-family: "Fraunces", serif;
+        font-size: 1.55rem;
+      }
+      .special {
+        border-color: rgba(255, 177, 43, 0.62);
+        background: linear-gradient(
+          135deg,
+          rgba(255, 177, 43, 0.2),
+          rgba(255, 99, 116, 0.16)
+        );
+        box-shadow: 0 0 38px rgba(255, 99, 116, 0.16);
+      }
+      .special s {
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 0.75rem;
+        margin-left: 6px;
+      }
+      .hero-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .hero-chips span {
+        padding: 7px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.07);
+        font-size: 0.67rem;
+        font-weight: 800;
+      }
+      .form-card {
+        padding: 20px;
+        border-radius: 25px;
+        background: #fff;
+        color: var(--ink);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
+      }
+      .form-card h2 {
+        font-size: 2rem;
+        margin: 8px 0;
+      }
+      .form-card p {
+        color: var(--muted);
+        font-size: 0.83rem;
+      }
+      .form-shell {
+        height: 720px;
+        overflow: hidden;
+        border-radius: 15px;
+        background: #f5f7fa;
+      }
+      .form-shell iframe {
+        display: block;
+        width: 100%;
+        height: 1083px !important;
+        border: 0;
+      }
+      .section {
+        padding: 92px 0;
+      }
+      .center {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 44px;
+      }
+      .center .eyebrow {
+        color: var(--teal);
+      }
+      .center p {
+        color: var(--muted);
+      }
+      .deliverables {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+      .card {
+        position: relative;
+        padding: 25px;
+        border: 1px solid var(--line);
+        border-radius: 21px;
+        background: #fff;
+        box-shadow: 0 14px 38px rgba(13, 39, 48, 0.08);
+        transition: 0.25s;
+      }
+      .card:hover {
+        transform: translateY(-7px);
+        box-shadow: var(--shadow);
+      }
+      .card .icon {
+        width: 45px;
+        height: 45px;
+        display: grid;
+        place-items: center;
+        border-radius: 13px;
+        background: linear-gradient(135deg, #d9fbf5, #e5e2ff);
+        margin-bottom: 22px;
+      }
+      .card p {
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+      .daily {
+        background: linear-gradient(180deg, #fff8f7, #fff);
+        border-block: 1px solid #f2dcdf;
+      }
+      .daily-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 50px;
+        align-items: center;
+      }
+      .calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 7px;
+        padding: 22px;
+        border-radius: 24px;
+        background: var(--navy);
+        box-shadow: var(--shadow);
+      }
+      .calendar span {
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.65rem;
+        font-weight: 800;
+        animation: pulse-day 3.5s ease-in-out infinite;
+      }
+      .calendar span:nth-child(3n) {
+        background: rgba(0, 183, 189, 0.22);
+        color: #8ef5eb;
+      }
+      .calendar span:nth-child(4n) {
+        background: rgba(255, 99, 116, 0.2);
+        color: #ffc4cc;
+      }
+      .calendar span:nth-child(5n) {
+        background: rgba(255, 177, 43, 0.2);
+        color: #ffdc9b;
+      }
+      .calendar span:nth-child(3n + 1) {
+        animation-delay: -1.1s;
+      }
+      .calendar span:nth-child(4n + 2) {
+        animation-delay: -2.2s;
+      }
+      @keyframes pulse-day {
+        50% {
+          transform: translateY(-3px);
+          box-shadow: 0 7px 16px rgba(0, 0, 0, 0.18);
+        }
+      }
+      .guarantee {
+        display: inline-flex;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: #dff9eb;
+        color: #087d4b;
+        font-size: 0.68rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+      }
+      .daily-copy p {
+        color: var(--muted);
+      }
+      .pricing {
+        background: var(--cream);
+      }
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 22px;
+        max-width: 990px;
+        margin: auto;
+      }
+      .plan {
+        position: relative;
+        padding: 32px;
+        border: 1px solid var(--line);
+        border-radius: 25px;
+        background: #fff;
+        box-shadow: 0 15px 44px rgba(13, 39, 48, 0.09);
+      }
+      .plan.featured {
+        color: #fff;
+        background: var(--navy);
+        border: 2px solid var(--coral);
+        transform: translateY(-8px);
+      }
+      .badge {
+        position: absolute;
+        right: 22px;
+        top: -16px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: linear-gradient(110deg, var(--mango), var(--coral));
+        color: #071d28;
+        font-size: 0.65rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .plan-price {
+        font-family: "Fraunces", serif;
+        font-size: 2.7rem;
+        font-weight: 900;
+      }
+      .plan-price small {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-size: 0.72rem;
+      }
+      .plan s {
+        color: rgba(255, 255, 255, 0.58);
+      }
+      .plan ul {
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 11px;
+        margin: 23px 0;
+      }
+      .plan li {
+        display: flex;
+        gap: 8px;
+        font-size: 0.83rem;
+      }
+      .plan li:before {
+        content: "✓";
+        color: var(--teal);
+        font-weight: 900;
+      }
+      .plan.featured li:before {
+        color: var(--mango);
+      }
+      .addons {
+        margin: 28px auto 0;
+        max-width: 990px;
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: #fff;
+      }
+      .addon-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .addon {
+        padding: 14px;
+        border-radius: 14px;
+        background: #f5f8fa;
+        font-size: 0.75rem;
+      }
+      .addon strong {
+        display: block;
+      }
+      .ads {
+        border: 1px solid rgba(255, 177, 43, 0.45);
+        background: #fff8e8;
+      }
+      .fine {
+        color: var(--muted);
+        font-size: 0.7rem;
+      }
+      .cta {
+        padding: 78px 0;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(120deg, #0a203a, #3d286e);
+      }
+      .cta p {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      footer {
+        padding: 30px 0;
+        background: #061923;
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .foot a {
+        color: #fff;
+        text-decoration: none;
+      }
+      @media (max-width: 850px) {
+        .hero-grid,
+        .daily-grid {
+          grid-template-columns: 1fr;
+        }
+        .deliverables {
+          grid-template-columns: 1fr 1fr;
+        }
+        .form-shell {
+          height: 620px;
+        }
+        .calendar {
+          order: -1;
+        }
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        .plan.featured {
+          transform: none;
+        }
+        .addon-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 560px) {
+        .wrap {
+          width: min(100% - 28px, 1160px);
+        }
+        .nav nav a:not(.btn) {
+          display: none;
+        }
+        .nav .btn {
+          min-height: 44px;
+          padding: 0 15px;
+        }
+        .hero {
+          padding: 58px 0;
+        }
+        .deliverables,
+        .addon-grid {
+          grid-template-columns: 1fr;
+        }
+        .section {
+          padding: 66px 0;
+        }
+        .form-card {
+          padding: 13px;
+        }
+        .calendar {
+          padding: 13px;
+          gap: 4px;
+        }
+        .calendar span {
+          border-radius: 7px;
+          font-size: 0.54rem;
+        }
+        .pricing-grid {
+          gap: 16px;
+        }
+        .plan {
+          padding: 26px 22px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .card,
+        .calendar span {
+          animation: none;
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap nav-row">
+        <a class="logo" href="index.html"><i></i>Work with Colby</a>
+        <nav>
+          <a href="#included">What You Get</a><a href="#pricing">Pricing</a
+          ><a class="btn" href="#start">Start a Request</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Social media management</span>
+            <h1>Show up consistently without living on social media.</h1>
+            <p>
+              Get a clear content strategy, a reliable publishing rhythm and
+              hands-on help producing stories, Reels, feed posts and
+              carousels—including AI cloning and Seedance video guidance.
+            </p>
+            <div class="price-row">
+              <div class="price-pill">
+                <small>Plans start at</small><strong>$350/month</strong>
+              </div>
+              <div class="price-pill special">
+                <small>Limited Daily Content special</small
+                ><strong>$497/month</strong><s>normally $800</s>
+              </div>
+            </div>
+            <div class="hero-chips">
+              <span>Human-reviewed strategy</span
+              ><span>Platform-ready content</span><span>Direct support</span
+              ><span>Monthly planning</span>
+            </div>
+          </div>
+          <aside class="form-card" id="start">
+            <span class="eyebrow">Tell me about your brand</span>
+            <h2>Build your content plan.</h2>
+            <p>
+              Share your audience, platforms and goals. I’ll recommend the right
+              publishing level.
+            </p>
+            <div class="form-shell">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/form/UIzyU9Iptnf4qtJmosXU"
+                id="inline-social-UIzyU9Iptnf4qtJmosXU"
+                data-layout="{'id':'INLINE'}"
+                data-trigger-type="alwaysShow"
+                data-activation-type="alwaysActivated"
+                data-deactivation-type="neverDeactivate"
+                data-form-name="Main Form"
+                data-height="1083"
+                data-layout-iframe-id="inline-social-UIzyU9Iptnf4qtJmosXU"
+                data-form-id="UIzyU9Iptnf4qtJmosXU"
+                title="Social Media Interest Form"
+              ></iframe>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section class="section" id="included">
+        <div class="wrap">
+          <div class="center">
+            <span class="eyebrow">A complete content system</span>
+            <h2>Strategy first. Consistency next.</h2>
+            <p>
+              Every plan begins with your offers, voice and audience—not a
+              folder of generic templates.
+            </p>
+          </div>
+          <div class="deliverables">
+            <article class="card">
+              <span class="icon">◎</span>
+              <h3>Daily story direction</h3>
+              <p>
+                Ideas and prompts designed for 1–2 daily story touchpoints that
+                keep your brand present.
+              </p>
+            </article>
+            <article class="card">
+              <span class="icon">▶</span>
+              <h3>Reel scripts</h3>
+              <p>
+                Hooks, scripts and production notes for short-form videos built
+                around your strongest topics.
+              </p>
+            </article>
+            <article class="card">
+              <span class="icon">▦</span>
+              <h3>Posts and carousels</h3>
+              <p>
+                Educational, promotional and authority-building content with
+                clear visual guidance.
+              </p>
+            </article>
+            <article class="card">
+              <span class="icon">✦</span>
+              <h3>AI production support</h3>
+              <p>
+                Guidance using AI cloning and Seedance for attention-grabbing
+                concepts without losing your voice.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section daily">
+        <div class="wrap daily-grid">
+          <div class="calendar" aria-label="Thirty days of scheduled content">
+            <span>1</span><span>2</span><span>3</span><span>4</span
+            ><span>5</span><span>6</span><span>7</span><span>8</span
+            ><span>9</span><span>10</span><span>11</span><span>12</span
+            ><span>13</span><span>14</span><span>15</span><span>16</span
+            ><span>17</span><span>18</span><span>19</span><span>20</span
+            ><span>21</span><span>22</span><span>23</span><span>24</span
+            ><span>25</span><span>26</span><span>27</span><span>28</span
+            ><span>29</span><span>30</span>
+          </div>
+          <div class="daily-copy">
+            <span class="guarantee">30-day content delivery guarantee</span>
+            <h2>A published-ready post for every day of the month.</h2>
+            <p>
+              The Daily Content special gives you 30 pieces of published-ready
+              content each month. We build the calendar, write the content and
+              help shape the visuals so there is always something valuable ready
+              to publish.
+            </p>
+            <p class="fine">
+              The guarantee covers delivery of 30 approved, published-ready
+              content pieces. It does not guarantee reach, followers, leads or
+              revenue, which depend on platforms, audience response, ad spend
+              and execution.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section pricing" id="pricing">
+        <div class="wrap">
+          <div class="center">
+            <span class="eyebrow">Simple pricing</span>
+            <h2>Start lean or post every day.</h2>
+            <p>
+              Choose the base content system or lock in the limited daily
+              publishing offer.
+            </p>
+          </div>
+          <div class="pricing-grid">
+            <article class="plan">
+              <span class="eyebrow">Starter</span>
+              <h3>Content Foundation</h3>
+              <div class="plan-price">$350<small>/month</small></div>
+              <ul>
+                <li>Monthly content strategy and calendar</li>
+                <li>Up to 8 published-ready feed posts</li>
+                <li>4 Reel scripts with production notes</li>
+                <li>Weekly story prompts</li>
+                <li>Facebook and Instagram included</li>
+              </ul>
+              <a class="btn" href="#start">Start at $350</a>
+            </article>
+            <article class="plan featured">
+              <span class="badge">Limited special</span
+              ><span class="eyebrow">Daily Content</span>
+              <h3>Never miss a day</h3>
+              <div class="plan-price">$497<small>/month</small></div>
+              <p><s>Normally $800/month</s></p>
+              <ul>
+                <li>30 published-ready content pieces every month</li>
+                <li>Daily story direction</li>
+                <li>2–4 Reel scripts per week</li>
+                <li>Feed posts and carousel concepts</li>
+                <li>AI cloning and Seedance production guidance</li>
+                <li>Monthly planning and performance review</li>
+                <li>Facebook and Instagram included</li>
+              </ul>
+              <a class="btn" href="#start">Claim Special Pricing</a>
+            </article>
+          </div>
+          <div class="addons">
+            <h3>Optional add-ons</h3>
+            <div class="addon-grid">
+              <div class="addon">
+                <strong>Add TikTok or YouTube</strong>+$150/month per platform
+              </div>
+              <div class="addon">
+                <strong>Four additional Reel scripts</strong>+$200/month
+              </div>
+              <div class="addon">
+                <strong>AI-generated video production</strong>From $150/clip
+              </div>
+              <div class="addon">
+                <strong>Community management</strong>From $300/month
+              </div>
+              <div class="addon">
+                <strong>On-location production</strong>Custom quote
+              </div>
+              <div class="addon ads">
+                <strong>Paid-ad management</strong>$500/month or 15% of ad
+                spend, whichever is greater
+              </div>
+            </div>
+            <p class="fine">
+              Advertising spend is paid separately by the client directly to the
+              advertising platform. Final scope depends on platform count,
+              approval speed and production requirements.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="cta">
+        <div class="wrap">
+          <span class="eyebrow">Ready to become consistent?</span>
+          <h2>Let’s build a month of content people remember.</h2>
+          <p>Tell me what you sell and where your audience spends time.</p>
+          <a class="btn" href="#start">Start Your Request</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap foot">
+        <span>© <span id="year"></span> workwithcolby.com</span
+        ><span
+          ><a href="index.html">Home</a> · <a href="terms.html">Terms</a> ·
+          <a href="privacy.html">Privacy</a></span
+        >
+      </div>
+    </footer>
+    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/scroll-progress.js"></script>
+  </body>
+</html>
