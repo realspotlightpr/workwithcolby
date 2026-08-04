@@ -1631,8 +1631,9 @@
         padding: 7px 4px 22px;
         scrollbar-width: none;
         overscroll-behavior-inline: contain;
-        touch-action: pan-x;
+        touch-action: pan-x pan-y pinch-zoom;
         will-change: scroll-position;
+        -webkit-overflow-scrolling: auto;
       }
       .task-type-grid::-webkit-scrollbar {
         display: none;
@@ -1669,6 +1670,7 @@
       @media (max-width: 800px) {
         .task-type-grid {
           grid-auto-columns: 76%;
+          overscroll-behavior-x: none;
         }
         .task-scope-head-row {
           align-items: center;
@@ -3705,7 +3707,7 @@
         <nav class="links" aria-label="Primary navigation">
           <a href="#problem">The Problem</a><a href="#solution">What I Handle</a
           ><a href="#process">How It Works</a><a href="#plans">Plans</a
-          ><a class="btn btn-primary" href="#apply">Start a Request</a>
+          ><a class="btn btn-primary" href="#apply">Tell Me What’s Stuck</a>
         </nav>
         <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
           Menu
@@ -3713,7 +3715,7 @@
         <nav class="mobile" aria-label="Mobile navigation">
           <a href="#problem">The Problem</a><a href="#solution">What I Handle</a
           ><a href="#process">How It Works</a><a href="#plans">Plans</a
-          ><a class="btn" href="#apply">Start a Request</a>
+          ><a class="btn" href="#apply">Tell Me What’s Stuck</a>
         </nav>
       </div>
     </header>
@@ -4454,8 +4456,8 @@
                   <span class="eyebrow">SEO Command Center</span>
                   <h3>Know what ranks—and what to fix next.</h3>
                   <div class="seo-sale-banner">
-                    <b>50% off SEO launch offer</b
-                    ><span>$749/month <s>$1,497</s></span>
+                    <b>50% off monthly + 80% off onboarding</b
+                    ><span>$749/month · $299 setup</span>
                   </div>
                   <p>
                     Combine a complete audit, technical fixes, a custom live
@@ -4464,7 +4466,8 @@
                   </p>
                   <div class="other-chips">
                     <span>Custom dashboard</span><span>AI SEO agent</span
-                    ><span>Technical fixes</span><span>Approved outreach</span>
+                    ><span>Technical fixes</span
+                    ><span>Up to 2 premium backlinks/month</span>
                   </div>
                   <div class="other-service-action">
                     <a class="btn btn-white" href="seo-services.html"
@@ -5017,8 +5020,14 @@
         taskCarousel.appendChild(clone);
       });
       function taskLoopWidth() {
-        return taskCarousel.scrollWidth / 2;
+        var firstClone = taskCarousel.children[originalTaskCards.length],
+          firstCard = taskCarousel.children[0];
+        return firstClone && firstCard
+          ? firstClone.offsetLeft - firstCard.offsetLeft
+          : taskCarousel.scrollWidth / 2;
       }
+      var taskAutoPosition = taskCarousel.scrollLeft,
+        taskPauseUntil = 0;
       function moveTasks(direction) {
         var card = taskCarousel.querySelector(".task-type"),
           step = card.getBoundingClientRect().width + 14,
@@ -5026,7 +5035,9 @@
           loop = taskLoopWidth();
         if (target < 0) target += loop;
         if (target >= loop) target -= loop;
-        taskCarousel.scrollLeft = target;
+        taskPauseUntil = performance.now() + 900;
+        taskAutoPosition = target;
+        taskCarousel.scrollTo({ left: target, behavior: "smooth" });
       }
       document
         .querySelector("[data-task-prev]")
@@ -5041,21 +5052,52 @@
       if (!window.matchMedia("(prefers-reduced-motion:reduce)").matches) {
         var taskLastFrame = performance.now();
         function glideTasks(now) {
-          var elapsed = Math.min(now - taskLastFrame, 34),
+          var elapsed = Math.min(now - taskLastFrame, 50),
             rect = taskCarousel.getBoundingClientRect(),
-            mobileSpeed = window.innerWidth <= 800 ? 0.05 : 0.032;
+            mobileSpeed = window.innerWidth <= 800 ? 0.075 : 0.04;
           taskLastFrame = now;
           if (
             !document.hidden &&
+            now >= taskPauseUntil &&
             rect.bottom > 0 &&
             rect.top < window.innerHeight
           ) {
             var loop = taskLoopWidth();
-            taskCarousel.scrollLeft =
-              (taskCarousel.scrollLeft + elapsed * mobileSpeed) % loop;
+            taskAutoPosition += elapsed * mobileSpeed;
+            if (taskAutoPosition >= loop) taskAutoPosition -= loop;
+            taskCarousel.scrollLeft = taskAutoPosition;
           }
           requestAnimationFrame(glideTasks);
         }
+        function pauseTaskGlide(delay) {
+          taskPauseUntil = performance.now() + delay;
+          taskAutoPosition = taskCarousel.scrollLeft;
+        }
+        taskCarousel.addEventListener(
+          "touchstart",
+          function () {
+            pauseTaskGlide(1800);
+          },
+          { passive: true },
+        );
+        taskCarousel.addEventListener(
+          "touchend",
+          function () {
+            pauseTaskGlide(900);
+          },
+          { passive: true },
+        );
+        taskCarousel.addEventListener("mouseenter", function () {
+          pauseTaskGlide(700);
+        });
+        window.addEventListener(
+          "resize",
+          function () {
+            var loop = taskLoopWidth();
+            taskAutoPosition = taskCarousel.scrollLeft % loop;
+          },
+          { passive: true },
+        );
         requestAnimationFrame(glideTasks);
       }
       var reveals = document.querySelectorAll("[data-reveal]");

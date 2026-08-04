@@ -373,11 +373,31 @@
         background: var(--cream);
       }
       .pricing-grid {
+        position: relative;
         display: grid;
         grid-template-columns: 1fr 1.1fr;
         gap: 22px;
         max-width: 990px;
         margin: auto;
+      }
+      .pricing-vs {
+        position: absolute;
+        z-index: 3;
+        left: 50%;
+        top: 54px;
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        transform: translateX(-50%);
+        border: 5px solid var(--cream);
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--mango), var(--coral));
+        color: var(--navy);
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        box-shadow: 0 12px 30px rgba(13, 39, 48, 0.18);
       }
       .plan {
         position: relative;
@@ -508,6 +528,20 @@
         .pricing-grid {
           grid-template-columns: 1fr;
         }
+        .pricing-vs {
+          position: relative;
+          left: auto;
+          top: auto;
+          margin: -5px auto -5px;
+          transform: none;
+          order: 2;
+        }
+        .pricing-grid .plan:first-of-type {
+          order: 1;
+        }
+        .pricing-grid .plan.featured {
+          order: 3;
+        }
         .plan.featured {
           transform: none;
         }
@@ -587,15 +621,6 @@
               hands-on help producing stories, Reels, feed posts and
               carousels—including AI cloning and Seedance video guidance.
             </p>
-            <div class="price-row">
-              <div class="price-pill">
-                <small>Plans start at</small><strong>$350/month</strong>
-              </div>
-              <div class="price-pill special">
-                <small>Limited Daily Content special</small
-                ><strong>$497/month</strong><s>normally $800</s>
-              </div>
-            </div>
             <div class="hero-chips">
               <span>Human-reviewed strategy</span
               ><span>Platform-ready content</span><span>Direct support</span
@@ -714,6 +739,7 @@
             </p>
           </div>
           <div class="pricing-grid">
+            <span class="pricing-vs" aria-hidden="true">VS</span>
             <article class="plan">
               <span class="eyebrow">Starter</span>
               <h3>Content Foundation</h3>

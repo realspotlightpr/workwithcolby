@@ -23,6 +23,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/article.css" />
+    <link rel="stylesheet" href="assets/lead-gate.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -42,9 +43,7 @@
         <nav class="nav-links">
           <a href="blog.html">Articles</a
           ><a href="seo-services.html">Managed SEO</a
-          ><a class="btn" href="resources/seo-dashboard-agent/PROMPT-LIBRARY.md"
-            >Download prompts</a
-          >
+          ><a class="btn" href="#resource-gate">Download prompts</a>
         </nav>
       </div>
     </header>
@@ -71,18 +70,79 @@
           authority limits. “Improve my SEO” is too broad. The prompts below
           narrow the work into outcomes you can inspect and approve.
         </p>
-        <div class="callout">
-          <strong>Download the complete Markdown library.</strong>
-          <a
-            class="btn"
-            href="resources/seo-dashboard-agent-free-pack.zip"
-            download
-            >Download everything</a
+        <section class="lead-gate" id="resource-gate" data-lead-gate>
+          <div class="lead-gate-head">
+            <span class="lead-gate-icon">↓</span>
+            <div>
+              <h2>Get all seven prompts free.</h2>
+              <p>
+                Enter your email to unlock the Markdown prompt library and
+                complete Codex and Claude resource pack.
+              </p>
+            </div>
+          </div>
+          <form
+            class="lead-form"
+            name="seo-agent-resource"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="company-website"
           >
-          <a href="resources/seo-dashboard-agent/PROMPT-LIBRARY.md"
-            >Open the free prompt file →</a
-          >
-        </div>
+            <input
+              type="hidden"
+              name="form-name"
+              value="seo-agent-resource"
+            /><input
+              type="hidden"
+              name="resource"
+              value="Seven SEO Agent Prompts"
+            />
+            <p hidden>
+              <label
+                >Do not fill this out: <input name="company-website"
+              /></label>
+            </p>
+            <label for="resource-name-prompts">Name</label
+            ><input
+              id="resource-name-prompts"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Your name"
+              required
+            /><label for="resource-email-prompts">Email</label
+            ><input
+              id="resource-email-prompts"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="Your best email"
+              required
+            /><button class="btn" type="submit">Unlock Free Resources</button>
+            <p class="lead-form-note">
+              Free practical resources plus occasional AI, SEO and technical
+              growth notes. Unsubscribe anytime.
+            </p>
+            <p class="lead-form-status" role="status" aria-live="polite"></p>
+          </form>
+          <div class="lead-downloads">
+            <strong>Your SEO prompt resources are unlocked.</strong>
+            <div class="lead-download-links">
+              <a
+                class="primary"
+                href="resources/seo-dashboard-agent-free-pack.zip"
+                download
+                >Download everything</a
+              ><a href="resources/seo-dashboard-agent/PROMPT-LIBRARY.md"
+                >Prompt library</a
+              ><a href="resources/seo-dashboard-agent/AGENTS.md">AGENTS.md</a
+              ><a href="resources/seo-dashboard-agent/CLAUDE.md">CLAUDE.md</a
+              ><a href="resources/seo-dashboard-agent/START-HERE.md"
+                >Setup guide</a
+              >
+            </div>
+          </div>
+        </section>
         <h2>1. Technical audit</h2>
         <p>
           Ask for a page-by-page evidence table covering status, title,
@@ -131,8 +191,7 @@
           Individual prompts work better when the repository also contains
           durable rules for safety, verification, deployment and reporting.
           Download the companion
-          <a href="resources/seo-dashboard-agent/AGENTS.md">AGENTS.md</a> and
-          <a href="resources/seo-dashboard-agent/CLAUDE.md">CLAUDE.md</a>.
+          <a href="#resource-gate">AGENTS.md and CLAUDE.md</a>.
         </p>
         <div class="article-cta">
           <h2>Prefer to have the system managed?</h2>
@@ -157,5 +216,6 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
     <script src="assets/scroll-progress.js"></script>
+    <script src="assets/lead-gate.js"></script>
   </body>
 </html>

@@ -28,6 +28,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/article.css" />
+    <link rel="stylesheet" href="assets/lead-gate.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -47,9 +48,7 @@
         <nav class="nav-links">
           <a href="blog.html">Articles</a
           ><a href="seo-services.html">Managed SEO</a
-          ><a class="btn" href="resources/seo-dashboard-agent/START-HERE.md"
-            >Get the prompts</a
-          >
+          ><a class="btn" href="#resource-gate">Get the prompts</a>
         </nav>
       </div>
     </header>
@@ -82,22 +81,79 @@
           rules for auditing a site, planning the dashboard, protecting secrets
           and keeping external actions approval-gated.
         </p>
-        <div class="callout">
-          <strong>Download the free prompt pack.</strong>
-          <a
-            class="btn"
-            href="resources/seo-dashboard-agent-free-pack.zip"
-            download
-            >Download everything</a
+        <section class="lead-gate" id="resource-gate" data-lead-gate>
+          <div class="lead-gate-head">
+            <span class="lead-gate-icon">↓</span>
+            <div>
+              <h2>Get the complete SEO agent pack free.</h2>
+              <p>
+                Enter your email to unlock the Codex and Claude instructions,
+                setup guide and prompt library.
+              </p>
+            </div>
+          </div>
+          <form
+            class="lead-form"
+            name="seo-agent-resource"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="company-website"
           >
-          <a href="resources/seo-dashboard-agent/AGENTS.md">AGENTS.md</a> ·
-          <a href="resources/seo-dashboard-agent/CLAUDE.md">CLAUDE.md</a> ·
-          <a href="resources/seo-dashboard-agent/PROMPT-LIBRARY.md"
-            >Prompt library</a
-          >
-          ·
-          <a href="resources/seo-dashboard-agent/START-HERE.md">Setup guide</a>
-        </div>
+            <input
+              type="hidden"
+              name="form-name"
+              value="seo-agent-resource"
+            /><input
+              type="hidden"
+              name="resource"
+              value="SEO Dashboard Agent Pack"
+            />
+            <p hidden>
+              <label
+                >Do not fill this out: <input name="company-website"
+              /></label>
+            </p>
+            <label for="resource-name-dashboard">Name</label
+            ><input
+              id="resource-name-dashboard"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Your name"
+              required
+            /><label for="resource-email-dashboard">Email</label
+            ><input
+              id="resource-email-dashboard"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="Your best email"
+              required
+            /><button class="btn" type="submit">Unlock Free Resources</button>
+            <p class="lead-form-note">
+              Free practical resources plus occasional AI, SEO and technical
+              growth notes. Unsubscribe anytime.
+            </p>
+            <p class="lead-form-status" role="status" aria-live="polite"></p>
+          </form>
+          <div class="lead-downloads">
+            <strong>Your SEO agent resources are unlocked.</strong>
+            <div class="lead-download-links">
+              <a
+                class="primary"
+                href="resources/seo-dashboard-agent-free-pack.zip"
+                download
+                >Download everything</a
+              ><a href="resources/seo-dashboard-agent/AGENTS.md">AGENTS.md</a
+              ><a href="resources/seo-dashboard-agent/CLAUDE.md">CLAUDE.md</a
+              ><a href="resources/seo-dashboard-agent/PROMPT-LIBRARY.md"
+                >Prompt library</a
+              ><a href="resources/seo-dashboard-agent/START-HERE.md"
+                >Setup guide</a
+              >
+            </div>
+          </div>
+        </section>
         <h2>What the agent should track</h2>
         <ul>
           <li>Search Console clicks, impressions, CTR and position.</li>
@@ -177,5 +233,6 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
     <script src="assets/scroll-progress.js"></script>
+    <script src="assets/lead-gate.js"></script>
   </body>
 </html>

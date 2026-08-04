@@ -1,0 +1,23 @@
+.seo-audit-modal[hidden] { display: none; }
+.seo-audit-modal { position: fixed; inset: 0; z-index: 10000; display: grid; place-items: center; padding: 20px; }
+.seo-audit-backdrop { position: absolute; inset: 0; background: rgba(5, 24, 43, .78); backdrop-filter: blur(10px); }
+.seo-audit-dialog { position: relative; width: min(100%, 560px); max-height: calc(100dvh - 32px); overflow: auto; border: 1px solid rgba(23, 188, 205, .35); border-radius: 28px; padding: clamp(24px, 5vw, 42px); background: #fffaf4; color: #0b2a36; box-shadow: 0 30px 90px rgba(0, 0, 0, .35), 0 0 50px rgba(28, 190, 209, .15); }
+.seo-audit-close { position: absolute; top: 16px; right: 16px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: #eaf2f5; color: #0b2a36; font-size: 24px; cursor: pointer; }
+.seo-audit-dialog h2 { margin: 8px 36px 10px 0; font-size: clamp(30px, 6vw, 46px); line-height: 1.02; }
+.seo-audit-dialog > p { color: #526b78; line-height: 1.65; }
+.seo-audit-form { display: grid; gap: 16px; margin-top: 24px; }
+.seo-audit-field { display: grid; gap: 7px; font-weight: 700; }
+.seo-audit-field input { width: 100%; min-height: 52px; border: 1px solid #cad9df; border-radius: 12px; padding: 0 15px; background: #fff; color: #0b2a36; font: inherit; }
+.seo-audit-field input:focus { outline: 3px solid rgba(16, 185, 202, .2); border-color: #10aebf; }
+.seo-audit-form .btn { width: 100%; border: 0; min-height: 54px; cursor: pointer; }
+.seo-audit-form .btn:disabled { opacity: .65; cursor: wait; }
+.seo-audit-note { margin: 0; font-size: 12px; text-align: center; }
+.seo-audit-note a { color: inherit; text-decoration: underline; }
+.seo-audit-status { min-height: 24px; margin: 0; font-size: 14px; font-weight: 700; text-align: center; }
+.seo-audit-status.is-error { color: #b42318; }
+.seo-audit-success { padding: 36px 0 20px; text-align: center; }
+.seo-audit-success .seo-audit-check { display: grid; place-items: center; width: 68px; height: 68px; margin: 0 auto 20px; border-radius: 50%; background: #d8faf0; color: #047857; font-size: 34px; }
+.seo-audit-success h2 { margin-right: 0; }
+body.seo-audit-open { overflow: hidden; }
+.seo-audit-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+@media (max-width: 560px) { .seo-audit-modal { padding: 10px; align-items: end; } .seo-audit-dialog { border-radius: 24px 24px 12px 12px; padding: 28px 20px 24px; } }

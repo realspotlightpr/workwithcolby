@@ -2,3 +2,6 @@
 Thumbs.db
 *.zip
 node_modules/
+
+# Local Netlify folder
+.netlify

@@ -664,6 +664,7 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="assets/seo-audit.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -687,7 +688,7 @@
           <a href="#included">What You Get</a><a href="#pricing">Pricing</a
           ><a href="#process">How It Works</a
           ><a href="#platforms">Visibility Platforms</a
-          ><a class="btn" href="#start">Start SEO Audit</a>
+          ><a class="btn" href="#seo-audit" data-seo-audit-open>Start SEO Audit</a>
         </nav>
       </div>
     </header>
@@ -707,8 +708,8 @@
               >See Pricing &amp; What’s Included →</a
             >
             <p class="trust">
-              Pricing is scoped for one primary website and market. No paid
-              links, fake listings or guaranteed rankings.
+              Pricing is scoped for one primary website and market. No link
+              spam, fake listings or guaranteed rankings.
             </p>
           </div>
           <div class="form" id="start">
@@ -777,8 +778,8 @@
               <h3>Legitimate authority building</h3>
               <p>
                 Free profile and citation opportunities first, followed by
-                relevant partner, resource and editorial outreach—never
-                automated spam.
+                relevant partner, resource and editorial outreach, including up
+                to two premium paid backlinks per month—never automated spam.
               </p>
             </article>
             <article class="card">
@@ -797,7 +798,7 @@
         <div class="wrap">
           <div class="center">
             <span class="seo-sale-ribbon"
-              >Limited offer · 50% off monthly SEO</span
+              >Limited offer · 50% off monthly SEO + 80% off onboarding</span
             >
             <span class="eyebrow">Simple, transparent pricing</span>
             <h2>One setup. One monthly SEO command center.</h2>
@@ -821,7 +822,9 @@
             <div class="pricing-body">
               <div class="pricing-column">
                 <h4>One-time onboarding</h4>
-                <span class="subprice">$1,497 once</span>
+                <span class="subprice sale-price"
+                  >$299 once <s>Normally $1,497</s></span
+                >
                 <ul>
                   <li>Complete technical and visibility audit</li>
                   <li>Search Console and sitemap setup</li>
@@ -840,13 +843,17 @@
                   <li>Technical and on-page improvements</li>
                   <li>Content opportunity planning</li>
                   <li>Legitimate citations and approved outreach</li>
+                  <li>Up to 2 premium paid backlinks per month</li>
                   <li>Live scoring, reporting and action queue</li>
                 </ul>
               </div>
             </div>
             <div class="pricing-action">
-              <p>No paid links, fake listings or guaranteed rankings.</p>
-              <a class="btn" href="#start">Request Your SEO Audit →</a>
+              <p>
+                Premium placements are relevance-checked and subject to
+                publisher approval. No fake listings or guaranteed rankings.
+              </p>
+              <a class="btn" href="#seo-audit" data-seo-audit-open>Request Your SEO Audit →</a>
             </div>
           </div>
         </div>
@@ -1027,7 +1034,7 @@
             let the technical fixes and authority-building queue move every
             month.
           </p>
-          <a class="btn" href="#start">Start With a Complete Audit →</a>
+          <a class="btn" href="#seo-audit" data-seo-audit-open>Start With a Complete Audit →</a>
         </div>
       </section>
     </main>
@@ -1041,9 +1048,36 @@
         >
       </div>
     </footer>
+    <div class="seo-audit-modal" data-seo-audit-modal hidden>
+      <div class="seo-audit-backdrop" data-seo-audit-close></div>
+      <div class="seo-audit-dialog" role="dialog" aria-modal="true" aria-labelledby="seo-audit-title">
+        <button class="seo-audit-close" type="button" aria-label="Close audit request" data-seo-audit-close>&times;</button>
+        <div data-seo-audit-form-view>
+          <span class="eyebrow">Free SEO audit</span>
+          <h2 id="seo-audit-title">Where should I send your audit?</h2>
+          <p>Share your contact details. Colby will review your current visibility and follow up with your free audit.</p>
+          <form class="seo-audit-form" data-seo-audit-form>
+            <label class="seo-audit-field">Name<input type="text" name="name" autocomplete="name" maxlength="120" required /></label>
+            <label class="seo-audit-field">Email<input type="email" name="email" autocomplete="email" maxlength="254" required /></label>
+            <label class="seo-audit-field">Phone number<input type="tel" name="phone" autocomplete="tel" inputmode="tel" maxlength="40" required /></label>
+            <input class="seo-audit-honeypot" type="text" name="companyWebsite" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button class="btn" type="submit">Request My Free Audit</button>
+            <p class="seo-audit-status" role="status" aria-live="polite" data-seo-audit-status></p>
+            <p class="seo-audit-note">By submitting, you agree to be contacted about your audit. See the <a href="privacy.html">Privacy Policy</a>.</p>
+          </form>
+        </div>
+        <div class="seo-audit-success" data-seo-audit-success hidden>
+          <div class="seo-audit-check" aria-hidden="true">&#10003;</div>
+          <h2>Audit request received.</h2>
+          <p>Thanks! Colby will review your information and follow up using the details you provided.</p>
+          <button class="btn" type="button" data-seo-audit-close>Back to the SEO page</button>
+        </div>
+      </div>
+    </div>
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
     <script src="assets/scroll-progress.js"></script>
+    <script src="assets/seo-audit.js"></script>
   </body>
 </html>

@@ -377,6 +377,29 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
 .price-badge{display:inline-flex;align-items:baseline;gap:8px;background:#fff;border:1.5px solid var(--line);border-radius:100px;padding:10px 22px;box-shadow:var(--shadow-sm);margin-bottom:26px}
 .price-badge b{font-family:'Fraunces';font-size:1.6rem}
 .price-badge span{color:var(--ink-soft);font-weight:700;font-size:.9rem}
+.website-pricing{background:linear-gradient(180deg,#f5f9ff,var(--cream));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.website-price-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1000px;margin:0 auto}
+.website-price-card{position:relative;padding:32px;border:1px solid var(--line);border-radius:26px;background:#fff;box-shadow:var(--shadow-sm)}
+.website-price-card.monthly{background:var(--navy);color:#fff;border-color:rgba(0,212,222,.45)}
+.website-price-card h3{font-size:1.55rem;margin:7px 0 6px}
+.website-price-card>p{color:var(--ink-soft);font-size:.94rem}
+.website-price-card.monthly>p{color:rgba(255,255,255,.7)}
+.website-price{margin:22px 0 8px;font-family:'Fraunces';font-size:2.75rem;font-weight:900;line-height:1}
+.website-price small{font-family:'Plus Jakarta Sans';font-size:.72rem;font-weight:800}
+.website-price-card ul{display:grid;gap:11px;padding:0;margin:22px 0;list-style:none;font-size:.88rem}
+.website-price-card li:before{content:'✓';margin-right:9px;color:var(--ocean);font-weight:900}
+.website-price-card.monthly li:before{color:var(--mango)}
+.website-price-card .btn{margin-top:auto}
+.website-vs{position:absolute;z-index:3;left:50%;top:54px;width:50px;height:50px;display:grid;place-items:center;transform:translateX(-50%);border:5px solid #f5f9ff;border-radius:50%;background:var(--grad-warm);font-size:.7rem;font-weight:900;letter-spacing:.08em}
+.support-discount{max-width:1000px;margin:24px auto 0;padding:24px 28px;border-radius:22px;background:linear-gradient(120deg,#0b203a,#253d75 58%,#5d49d8);color:#fff;box-shadow:var(--shadow)}
+.support-discount-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:18px}
+.support-discount-head h3{margin:5px 0 0;color:#fff;font-size:1.55rem}
+.discount-pill{padding:9px 13px;border-radius:999px;background:var(--grad-warm);color:var(--navy);font-size:.72rem;font-weight:900;text-transform:uppercase;white-space:nowrap}
+.discount-rates{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.discount-rate{padding:16px;border:1px solid rgba(255,255,255,.15);border-radius:16px;background:rgba(255,255,255,.08)}
+.discount-rate span{display:block;color:rgba(255,255,255,.65);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800}
+.discount-rate strong{display:block;margin:4px 0;font-family:'Fraunces';font-size:1.7rem}.discount-rate small{color:rgba(255,255,255,.72)}
+@media(max-width:760px){.website-price-grid,.discount-rates{grid-template-columns:1fr}.website-vs{position:relative;left:auto;top:auto;margin:-6px auto;transform:none;order:2}.website-price-card:first-of-type{order:1}.website-price-card.monthly{order:3}.support-discount-head{align-items:flex-start;flex-direction:column}.support-discount{padding:22px 18px}}
 .feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:22px;align-items:stretch}
 .f-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s}
 .f-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
@@ -411,6 +434,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
 </style>
 <link rel="stylesheet" href="assets/service-offer.css">
 <link rel="stylesheet" href="assets/scroll-progress.css">
+<link rel="stylesheet" href="assets/service-mega-menu.css">
 </head>
 <body>
 
@@ -420,18 +444,26 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <div class="nav-item"><button>Work With Me <span class="caret">▾</span></button>
-        <div class="dropdown">
-          <a href="operator.html"><span class="dd-ic" style="background:var(--grad-warm)">⚡</span><span><span class="dd-t">The Operator</span><span class="dd-s">1 brand · unlimited tasks · $1,200/mo</span></span></a>
-          <a href="growth-partner.html"><span class="dd-ic" style="background:var(--grad-cool)">🚀</span><span><span class="dd-t">The Growth Partner</span><span class="dd-s">multiple brands · priority · $2,000/mo</span></span></a>
-          <a href="websites.html"><span class="dd-ic" style="background:var(--grad-hero)">🌐</span><span><span class="dd-t">Website Builds</span><span class="dd-s">SEO sites · from $997</span></span></a>
+        <div class="dropdown mega-menu">
+          <div class="mega-group"><span class="mega-group-title">Monthly packages</span>
+            <a href="operator.html"><span class="dd-ic" style="background:var(--grad-warm)">⚡</span><span class="dd-copy"><span class="dd-t">The Operator</span><span class="dd-s">One brand · unlimited requests · $1,200/mo</span></span></a>
+            <a href="growth-partner.html"><span class="dd-ic" style="background:var(--grad-cool)">🚀</span><span class="dd-copy"><span class="dd-t">The Growth Partner</span><span class="dd-s">Multiple brands · two active projects · $2,000/mo</span></span></a>
+          </div>
+          <div class="mega-group"><span class="mega-group-title">Other services</span>
+            <a href="websites.html"><span class="dd-ic" style="background:var(--grad-hero)">🌐</span><span class="dd-copy"><span class="dd-t">Website Builds</span><span class="dd-s">One-time custom websites from $997</span></span></a>
+            <a href="seo-services.html"><span class="dd-ic" style="background:var(--grad-cool)">SEO</span><span class="dd-copy"><span class="dd-t">SEO Command Center</span><span class="dd-s">Dashboard, AI agent and authority growth</span></span></a>
+            <a href="social-media.html"><span class="dd-ic" style="background:var(--grad-warm)">SM</span><span class="dd-copy"><span class="dd-t">Social Media Management</span><span class="dd-s">Strategy and consistent content production</span></span></a>
+            <a class="mega-all" href="other-services.html">View all focused services →</a>
+          </div>
         </div>
       </div>
       <a href="#included">What You Get</a>
+      <a href="#pricing">Pricing</a>
       <a href="#process">How It Works</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
-      <a href="index.html#services" class="btn btn-ghost">See Pricing</a>
+      <a href="#pricing" class="btn btn-ghost">See Pricing</a>
       <a href="sms:+17875493076" class="btn btn-primary"><span class="shine"></span>📲 Text Me</a>
     </div>
     <button class="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -441,7 +473,10 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
     <a href="operator.html" class="sub">→ The Operator</a>
     <a href="growth-partner.html" class="sub">→ The Growth Partner</a>
     <a href="websites.html" class="sub">→ Website Builds</a>
+    <a href="seo-services.html" class="sub">→ SEO Command Center</a>
+    <a href="social-media.html" class="sub">→ Social Media Management</a>
     <a href="#included">What You Get</a>
+    <a href="#pricing">Pricing</a>
     <a href="#process">How It Works</a>
     <a href="#faq">FAQ</a>
     <a href="sms:+17875493076">📲 Text Me Now</a>
@@ -456,8 +491,6 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
       <span class="eyebrow" data-reveal>One-time website development</span>
       <h1 data-reveal>Your website should do more than exist. <span class="grad">It should earn attention.</span></h1>
       <p data-reveal>Get a custom, fast and mobile-first website structured for search and conversion. Strategy, design, development and launch support live under one roof.</p>
-      <div class="price-badge" data-reveal><b>from $997</b><span>flat project rate</span></div>
-      <div class="service-rate-offer" data-reveal><span class="offer-discount-seal">10% off</span><div><span class="offer-kicker">Limited ongoing-support rate · only a few spots</span><div class="offer-price-line"><em>Save 10%</em></div><p>Add a four-month Operator or Growth Partner plan after launch.</p><a href="index.html#plans"><span>Compare ongoing plans</span> →</a></div><div class="offer-savings"><div><b>4 mo.</b><small>Rate lock</small></div></div></div>
       <div class="hero-ctas" data-reveal><a href="#website-interest-form" class="btn btn-primary btn-lg"><span class="shine"></span>Request Your Website</a><a href="#included" class="btn btn-ghost btn-lg">See What You Get</a></div>
       <div class="trust-row" data-reveal><span>Custom design</span><span>SEO-ready</span><span>Mobile-first</span><span>Launch included</span></div>
     </div>
@@ -481,6 +514,35 @@ footer{background:var(--ink);color:rgba(255,255,255,.75);padding:58px 0 34px}
       <div class="f-card" data-reveal data-delay="1"><div class="ic" style="background:linear-gradient(135deg,#00b4c4,#0091a8)">🎨</div><h3>Custom design</h3><p>No cookie-cutter templates. A look that fits your brand and stands out in your market.</p></div>
       <div class="f-card" data-reveal data-delay="2"><div class="ic" style="background:linear-gradient(135deg,#ffb020,#e69200)">🤖</div><h3>AI-native build</h3><p>Vibe-coded with the best AI tools, so you get premium quality delivered fast and affordably.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="website-pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head center" data-reveal><span class="eyebrow">Choose the right fit</span><h2>One-time website build vs. ongoing monthly support.</h2><p>Launch a focused website project, or keep a technical partner available as your requests continue after launch.</p></div>
+    <div class="website-price-grid">
+      <span class="website-vs" aria-hidden="true">VS</span>
+      <article class="website-price-card" data-reveal>
+        <span class="eyebrow">One-time project</span>
+        <h3>Website Build</h3>
+        <p>Best when you need a defined website designed, developed and launched.</p>
+        <div class="website-price">$997 <small>starting price</small></div>
+        <ul><li>Custom responsive design</li><li>Conversion-focused page structure</li><li>Foundational on-page SEO</li><li>Development, optimization and launch</li><li>Clear project scope and handoff</li></ul>
+        <a href="#website-interest-form" class="btn btn-primary">Request a Website</a>
+      </article>
+      <article class="website-price-card monthly" data-reveal data-delay="1">
+        <span class="eyebrow">Ongoing partnership</span>
+        <h3>Monthly Support</h3>
+        <p>Best when the website is only one part of an ongoing AI, IT, design and development queue.</p>
+        <div class="website-price">$1,200 <small>/month</small></div>
+        <ul><li>Unlimited task, design and development requests</li><li>Ongoing website improvements and maintenance</li><li>Automations, integrations and IT support</li><li>One focused active priority at a time</li><li>Direct access to Colby</li></ul>
+        <a href="operator.html" class="btn btn-primary">Explore Monthly Support</a>
+      </article>
+    </div>
+    <aside class="support-discount" data-reveal aria-label="Limited four-month support discount">
+      <div class="support-discount-head"><div><span class="eyebrow">Limited four-month rate lock</span><h3>Save 10% when you need support beyond launch.</h3></div><span class="discount-pill">Only a few spots</span></div>
+      <div class="discount-rates"><div class="discount-rate"><span>The Operator</span><strong>$1,080/month</strong><small>Save $480 across four months</small></div><div class="discount-rate"><span>The Growth Partner</span><strong>$1,800/month</strong><small>Save $800 across four months</small></div></div>
+    </aside>
   </div>
 </section>
 
