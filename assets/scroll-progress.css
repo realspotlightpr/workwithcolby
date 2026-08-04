@@ -1,0 +1,4 @@
+.site-scroll-progress{position:fixed;z-index:9999;top:0;left:0;width:100%;height:4px;background:rgba(10,35,50,.12);pointer-events:none;transform:translateZ(0)}
+.site-scroll-progress-bar{display:block;width:100%;height:100%;transform:scaleX(0);transform-origin:left center;background:linear-gradient(90deg,#05bec1 0%,#2799ef 42%,#7557ff 72%,#ff6478 100%);box-shadow:0 0 10px rgba(44,190,240,.72),0 0 20px rgba(113,83,255,.36);will-change:transform}
+@media(max-width:700px){.site-scroll-progress{height:3px}.site-scroll-progress-bar{box-shadow:0 0 8px rgba(44,190,240,.7)}}
+@media(prefers-reduced-motion:reduce){.site-scroll-progress-bar{will-change:auto}}
