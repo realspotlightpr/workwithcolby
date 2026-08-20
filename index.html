@@ -203,8 +203,24 @@
         font-size: 0.9rem;
         font-weight: 700;
       }
+      .links > a.client-login {
+        padding: 9px 13px;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        white-space: nowrap;
+      }
+      .links > a.client-login:hover {
+        background: rgba(255, 255, 255, 0.18);
+      }
       .nav.scrolled .links > a:not(.btn) {
         color: var(--ink);
+      }
+      .nav.scrolled .links > a.client-login {
+        border-color: rgba(13, 39, 48, 0.18);
+        background: #fff;
+        box-shadow: 0 8px 22px rgba(13, 39, 48, 0.08);
       }
       .menu-btn {
         display: none;
@@ -3707,6 +3723,7 @@
         <nav class="links" aria-label="Primary navigation">
           <a href="#problem">The Problem</a><a href="#solution">What I Handle</a
           ><a href="#process">How It Works</a><a href="#plans">Plans</a
+          ><a class="client-login" href="https://login.workwithcolby.com/">Client Login</a
           ><a class="btn btn-primary" href="#apply">Tell Me What’s Stuck</a>
         </nav>
         <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
@@ -3715,6 +3732,7 @@
         <nav class="mobile" aria-label="Mobile navigation">
           <a href="#problem">The Problem</a><a href="#solution">What I Handle</a
           ><a href="#process">How It Works</a><a href="#plans">Plans</a
+          ><a href="https://login.workwithcolby.com/">Client Login</a
           ><a class="btn" href="#apply">Tell Me What’s Stuck</a>
         </nav>
       </div>
@@ -4865,6 +4883,7 @@
             <div class="footer-contact">
               <a href="sms:+17875493076"><i>SMS</i>787-549-3076</a
               ><a href="#apply"><i>↗</i>Interest Form</a
+              ><a href="https://login.workwithcolby.com/"><i>↗</i>Client Login</a
               ><a
                 href="https://www.youtube.com/@RealLifewithColby"
                 target="_blank"
